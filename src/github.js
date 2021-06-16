@@ -91,6 +91,7 @@ function RegisterWidgets(dashboardProvider) {
       templateUrl: '{widgetsPath}/github/src/events.user.html',
       reload: true,
       edit: {
+        controller: 'EditController',
         templateUrl: '{widgetsPath}/github/src/events.user.edit.html'
       },
       resolve: {
@@ -110,6 +111,7 @@ function RegisterWidgets(dashboardProvider) {
       templateUrl: '{widgetsPath}/github/src/events.org.html',
       reload: true,
       edit: {
+        controller: 'EditController',
         templateUrl: '{widgetsPath}/github/src/events.org.edit.html'
       },
       resolve: {
@@ -129,6 +131,7 @@ function RegisterWidgets(dashboardProvider) {
       templateUrl: '{widgetsPath}/github/src/events.repo.html',
       reload: true,
       edit: {
+        controller: 'EditController',
         templateUrl: '{widgetsPath}/github/src/events.repo.edit.html'
       },
       resolve: {

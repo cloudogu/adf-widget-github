@@ -21,15 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 'use strict';
+
+function GithubEventsController(config, events) {
+  var vm = this;
+  vm.events = events;
+}
 
 angular
   .module('adf.widget.github')
   .controller('GithubEventsController', GithubEventsController);
-
-function GithubEventsController(config, events) {
-  var vm = this;
-
-  vm.events = events;
-}
