@@ -1,12 +1,12 @@
 <form role="form">
   <div class="form-group">
     <label for="path">Github Repository Path</label>
-    <span class="grey glyphicon glyphicon-info-sign ng-scope" uib-tooltip-html="repositoryPathTooltip" tooltip-placement="bottom" aria-label="Repository Path Tooltip"></span>
-    <input type="text" class="form-control" id="path" ng-model="config.path" placeholder="Enter Path (owner/reponame)">
+    <span class="grey glyphicon glyphicon-info-sign ng-scope" tabindex="0" ng-focus="accessTokenTooltipIsOpen = !accessTokenTooltipIsOpen" tooltip-trigger="outsideClick" tooltip-is-open="repositoryPathtooltipIsOpen" ng-mouseenter="repositoryPathtooltipIsOpen = !repositoryPathtooltipIsOpen" uib-tooltip-html="repositoryPathTooltip" tooltip-placement="top" aria-label="Repository Path Tooltip"></span>
+    <input type="text" class="form-control" id="path" ng-model="config.path" placeholder="Enter Path (owner/reponame)" required>
   </div>
   <div class="form-group">
     <label for="path">Access Token</label>
-    <span class="grey glyphicon glyphicon-info-sign ng-scope" tooltip-trigger="outsideClick" tooltip-is-open="tooltipIsOpen"  ng-mouseover="tooltipIsOpen = !tooltipIsOpen" uib-tooltip-html="accessTokenTooltip" tooltip-placement="bottom" aria-label="Access Token Tooltip"></span>
-    <input type="text" class="form-control" id="path" ng-model="config.accessToken">
+    <span class="grey glyphicon glyphicon-info-sign ng-scope" tabindex="0" ng-focus="accessTokenTooltipIsOpen = !accessTokenTooltipIsOpen" tooltip-trigger="outsideClick" tooltip-is-open="accessTokenTooltipIsOpen" ng-mouseenter="accessTokenTooltipIsOpen = true"  uib-tooltip-html="accessTokenTooltip" tooltip-placement="top" aria-label="Access Token Tooltip"></span>
+    <input type="text" class="form-control" id="path" ng-model="config.accessToken" required>
   </div>
 </form>
