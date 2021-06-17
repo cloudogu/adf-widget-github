@@ -24,7 +24,7 @@
 'use strict';
 
 function GithubEventsController(config, events) {
-  var vm = this;
+  const vm = this;
   vm.events = events;
 }
 

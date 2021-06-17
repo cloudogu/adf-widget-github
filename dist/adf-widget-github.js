@@ -427,15 +427,16 @@ function GithubService($q, $http, githubApiUrl) {
 
 
 
-angular
-  .module('adf.widget.github')
-  .controller('GithubIssuesController', GithubIssuesController);
-
 function GithubIssuesController(config, issues) {
   var vm = this;
 
   vm.issues = issues;
 }
+
+angular
+  .module('adf.widget.github')
+  .controller('GithubIssuesController', GithubIssuesController);
+
 
 /*
  * The MIT License
@@ -463,18 +464,14 @@ function GithubIssuesController(config, issues) {
 
 
 
-angular
-  .module('adf.widget.github')
-  .controller('GithubHistoryController', GithubHistoryController);
-
 function GithubHistoryController($filter, config, commits) {
-  var vm = this;
+  const vm = this;
   if (commits) {
     vm.chart = createChart();
   }
 
   function createChart() {
-    var data = {};
+    const data = {};
 
     var orderedCommits = $filter('orderBy')(commits, function (commit) {
       return commit.commit.author.date;
@@ -491,15 +488,15 @@ function GithubHistoryController($filter, config, commits) {
       }
     });
 
-    var chartData = [];
-    var options = {
+    const chartData = [];
+    const options = {
       scales: {
         yAxes: [
           {
             id: 'y-axis-1',
             display: true,
             position: 'left',
-            ticks: { fixedStepSize: 1 },
+            ticks: {fixedStepSize: 1},
             scaleLabel: {
               display: true,
               labelString: 'Commits'
@@ -509,15 +506,15 @@ function GithubHistoryController($filter, config, commits) {
       },
       legend: {
         display: true,
-        position: "bottom"
+        position: 'bottom'
       },
       responsive: true
-    }
-    var chart = {
+    };
+    const chart = {
       labels: [],
       data: [chartData],
       series: [config.path],
-      class: "chart-line",
+      class: 'chart-line',
       options: options
     };
 
@@ -529,6 +526,10 @@ function GithubHistoryController($filter, config, commits) {
     return chart;
   }
 }
+
+angular
+  .module('adf.widget.github')
+  .controller('GithubHistoryController', GithubHistoryController);
 
 /*
  * The MIT License
@@ -556,7 +557,7 @@ function GithubHistoryController($filter, config, commits) {
 
 
 function GithubEventsController(config, events) {
-  var vm = this;
+  const vm = this;
   vm.events = events;
 }
 
@@ -622,15 +623,16 @@ angular.module('adf.widget.github').controller('EditController', ["config", "$sc
 
 
 
-angular
-  .module('adf.widget.github')
-  .controller('GithubCommitsController', GithubCommitsController);
 
 function GithubCommitsController(config, commits) {
   var vm = this;
 
   vm.commits = commits;
 }
+
+angular
+  .module('adf.widget.github')
+  .controller('GithubCommitsController', GithubCommitsController);
 
 /*
  * The MIT License
@@ -658,10 +660,6 @@ function GithubCommitsController(config, commits) {
 
 
 
-angular
-  .module('adf.widget.github')
-  .controller('GithubAuthorController', GithubAuthorController);
-
 function GithubAuthorController(config, commits) {
   var vm = this;
 
@@ -683,7 +681,7 @@ function GithubAuthorController(config, commits) {
     var options = {
       legend: {
         display: true,
-        position: "bottom"
+        position: 'bottom'
       },
       responsive: true
     }
@@ -691,8 +689,8 @@ function GithubAuthorController(config, commits) {
     var chart = {
       labels: [],
       data: [],
-      series: ["Commits"],
-      class: "chart-pie",
+      series: ['Commits'],
+      class: 'chart-pie',
       options: options
     };
 
@@ -704,4 +702,8 @@ function GithubAuthorController(config, commits) {
     return chart;
   }
 }
+
+angular
+  .module('adf.widget.github')
+  .controller('GithubAuthorController', GithubAuthorController);
 })(window);

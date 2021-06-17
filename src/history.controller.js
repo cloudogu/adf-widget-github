@@ -24,18 +24,14 @@
 
 'use strict';
 
-angular
-  .module('adf.widget.github')
-  .controller('GithubHistoryController', GithubHistoryController);
-
 function GithubHistoryController($filter, config, commits) {
-  var vm = this;
+  const vm = this;
   if (commits) {
     vm.chart = createChart();
   }
 
   function createChart() {
-    var data = {};
+    const data = {};
 
     var orderedCommits = $filter('orderBy')(commits, function (commit) {
       return commit.commit.author.date;
@@ -52,15 +48,15 @@ function GithubHistoryController($filter, config, commits) {
       }
     });
 
-    var chartData = [];
-    var options = {
+    const chartData = [];
+    const options = {
       scales: {
         yAxes: [
           {
             id: 'y-axis-1',
             display: true,
             position: 'left',
-            ticks: { fixedStepSize: 1 },
+            ticks: {fixedStepSize: 1},
             scaleLabel: {
               display: true,
               labelString: 'Commits'
@@ -70,15 +66,15 @@ function GithubHistoryController($filter, config, commits) {
       },
       legend: {
         display: true,
-        position: "bottom"
+        position: 'bottom'
       },
       responsive: true
-    }
-    var chart = {
+    };
+    const chart = {
       labels: [],
       data: [chartData],
       series: [config.path],
-      class: "chart-line",
+      class: 'chart-line',
       options: options
     };
 
@@ -90,3 +86,7 @@ function GithubHistoryController($filter, config, commits) {
     return chart;
   }
 }
+
+angular
+  .module('adf.widget.github')
+  .controller('GithubHistoryController', GithubHistoryController);

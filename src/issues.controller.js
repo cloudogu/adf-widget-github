@@ -24,12 +24,13 @@
 
 'use strict';
 
-angular
-  .module('adf.widget.github')
-  .controller('GithubIssuesController', GithubIssuesController);
-
 function GithubIssuesController(config, issues) {
   var vm = this;
 
   vm.issues = issues;
 }
+
+angular
+  .module('adf.widget.github')
+  .controller('GithubIssuesController', GithubIssuesController);
+
