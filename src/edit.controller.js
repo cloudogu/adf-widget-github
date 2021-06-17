@@ -28,4 +28,26 @@
 angular.module('adf.widget.github').controller('EditController', function (config, $scope, $sce) {
   $scope.accessTokenTooltip = $sce.trustAsHtml('You need to a personal git access token. You can find information on how to create one <a href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">here</a>');
   $scope.repositoryPathTooltip = $sce.trustAsHtml('Here you have to specify the repo for that the widget like this:<b>organisation/repositoryname</b> eg. <b>github/gitignore</b>');
+  $scope.closeTooltip = function (e) {
+    console.log('REEEEEEEEEEEE');
+    e.stopPropagation();
+  };
 });
+
+angular.module('adf.widget.github').directive('onEscape', function () {
+  return {
+    restrict: 'A',
+    scope: {
+      fn: '&onEscape'
+    },
+    link: function(scope, elem, attrs) {
+      elem.on('keydown', function (event) {
+        if (event.keyCode === 27)
+          scope.fn(event);
+        scope.$apply();
+      });
+    }
+  };
+});
+
+
