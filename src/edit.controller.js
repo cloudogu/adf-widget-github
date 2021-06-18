@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2015, Sebastian Sdorra
+ * Copyright (c) 2021, Cloudogu
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,13 +21,33 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 'use strict';
 
-function GithubEventsController(config, events) {
-  const vm = this;
-  vm.events = events;
-}
 
-angular
-  .module('adf.widget.github')
-  .controller('GithubEventsController', GithubEventsController);
+angular.module('adf.widget.github').controller('EditController', function (config, $scope, $sce) {
+  $scope.accessTokenTooltip = $sce.trustAsHtml('Learn how to create a personal access token on <a href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">github</a>');
+  $scope.repositoryPathTooltip = $sce.trustAsHtml('Enter the repository like this: <b>organisation/repositoryname</b> eg. <b>github/gitignore</b>');
+  $scope.closeTooltip = function (e) {
+    console.log('REEEEEEEEEEEE');
+    e.stopPropagation();
+  };
+});
+
+angular.module('adf.widget.github').directive('onEscape', function () {
+  return {
+    restrict: 'A',
+    scope: {
+      fn: '&onEscape'
+    },
+    link: function(scope, elem, attrs) {
+      elem.on('keydown', function (event) {
+        if (event.keyCode === 27)
+          scope.fn(event);
+        scope.$apply();
+      });
+    }
+  };
+});
+
+
