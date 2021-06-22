@@ -24,10 +24,6 @@
 
 'use strict';
 
-angular
-  .module('adf.widget.github', ['adf.provider', 'chart.js'])
-  .value('githubApiUrl', 'https://api.github.com/')
-  .config(RegisterWidgets);
 
 function RegisterWidgets(dashboardProvider) {
   // template object for github widgets
@@ -36,6 +32,7 @@ function RegisterWidgets(dashboardProvider) {
     category: 'GitHub',
     controllerAs: 'vm',
     edit: {
+      controller: 'EditController',
       templateUrl: '{widgetsPath}/github/src/edit.html'
     }
   };
@@ -78,8 +75,8 @@ function RegisterWidgets(dashboardProvider) {
       templateUrl: '{widgetsPath}/github/src/issues.html',
       resolve: {
         /* @ngInject */
-        issues: function(github, config){
-          if (config.path){
+        issues: function (github, config) {
+          if (config.path) {
             return github.getIssues(config);
           }
         }
@@ -94,11 +91,12 @@ function RegisterWidgets(dashboardProvider) {
       templateUrl: '{widgetsPath}/github/src/events.user.html',
       reload: true,
       edit: {
+        controller: 'EditController',
         templateUrl: '{widgetsPath}/github/src/events.user.edit.html'
       },
       resolve: {
-        events: function(github, config){
-          if (config.user){
+        events: function (github, config) {
+          if (config.user) {
             return github.getUserEvents(config);
           }
         }
@@ -113,11 +111,12 @@ function RegisterWidgets(dashboardProvider) {
       templateUrl: '{widgetsPath}/github/src/events.org.html',
       reload: true,
       edit: {
+        controller: 'EditController',
         templateUrl: '{widgetsPath}/github/src/events.org.edit.html'
       },
       resolve: {
-        events: function(github, config){
-          if (config.org){
+        events: function (github, config) {
+          if (config.org) {
             return github.getOrgaEvents(config);
           }
         }
@@ -132,14 +131,20 @@ function RegisterWidgets(dashboardProvider) {
       templateUrl: '{widgetsPath}/github/src/events.repo.html',
       reload: true,
       edit: {
+        controller: 'EditController',
         templateUrl: '{widgetsPath}/github/src/events.repo.edit.html'
       },
       resolve: {
-        events: function(github, config){
-          if (config.path){
+        events: function (github, config) {
+          if (config.path) {
             return github.getRepoEvents(config);
           }
         }
       }
     });
 }
+
+angular
+  .module('adf.widget.github', ['adf.provider', 'chart.js'])
+  .value('githubApiUrl', 'https://api.github.com/')
+  .config(RegisterWidgets);

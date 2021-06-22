@@ -24,10 +24,6 @@
 
 'use strict';
 
-angular
-  .module('adf.widget.github')
-  .controller('GithubAuthorController', GithubAuthorController);
-
 function GithubAuthorController(config, commits) {
   var vm = this;
 
@@ -49,7 +45,7 @@ function GithubAuthorController(config, commits) {
     var options = {
       legend: {
         display: true,
-        position: "bottom"
+        position: 'bottom'
       },
       responsive: true
     }
@@ -57,8 +53,8 @@ function GithubAuthorController(config, commits) {
     var chart = {
       labels: [],
       data: [],
-      series: ["Commits"],
-      class: "chart-pie",
+      series: ['Commits'],
+      class: 'chart-pie',
       options: options
     };
 
@@ -70,3 +66,7 @@ function GithubAuthorController(config, commits) {
     return chart;
   }
 }
+
+angular
+  .module('adf.widget.github')
+  .controller('GithubAuthorController', GithubAuthorController);

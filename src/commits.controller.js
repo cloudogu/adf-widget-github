@@ -24,12 +24,13 @@
 
 'use strict';
 
-angular
-  .module('adf.widget.github')
-  .controller('GithubCommitsController', GithubCommitsController);
 
 function GithubCommitsController(config, commits) {
   var vm = this;
 
   vm.commits = commits;
 }
+
+angular
+  .module('adf.widget.github')
+  .controller('GithubCommitsController', GithubCommitsController);
