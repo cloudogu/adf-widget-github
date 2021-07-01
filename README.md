@@ -4,19 +4,19 @@ GitHub widgest for the [angular-dashboard-framework](https://github.com/sdorra/a
 
 ## Build
 
-The widget is build with the help of [node](https://nodejs.org/), [npm](https://www.npmjs.com/), [bower](http://bower.io/) and [gulp](http://gulpjs.com/). For a install instruction for node and npm, please have a look [here](https://docs.npmjs.com/getting-started/installing-node).
+The widget is build with the help of [node](https://nodejs.org/), [yarn](https://yarnpkg.com/), [bower](http://bower.io/) and [gulp](http://gulpjs.com/). For a install instruction for node, please have a look [here](https://docs.npmjs.com/getting-started/installing-node).
 
 #### Installing bower and gulp
 
 ```bash
-npm install -g bower
-npm install -g gulp
+yarn install -g bower
+yarn install -g gulp
 ```
 
 #### Installing dependencies
 
 ```bash
-npm install
+yarn install
 bower install
 ```
 

@@ -1,12 +1,28 @@
 <form role="form">
   <div class="form-group">
     <label for="path">Github Repository Path</label>
-    <span class="grey glyphicon glyphicon-info-sign ng-scope" tabindex="0" ng-focus="repositoryPathtooltipIsOpen = !repositoryPathtooltipIsOpen" tooltip-trigger="outsideClick" tooltip-is-open="repositoryPathtooltipIsOpen" ng-mouseenter="repositoryPathtooltipIsOpen = !repositoryPathtooltipIsOpen" uib-tooltip-html="repositoryPathTooltip" tooltip-placement="top" aria-label="Repository Path Tooltip"></span>
+    <span class="glyphicon glyphicon-info-sign ng-scope"
+          tabindex="0"
+          ng-focus="repositoryPathtooltipIsOpen = !repositoryPathtooltipIsOpen"
+          tooltip-trigger="outsideClick"
+          tooltip-is-open="repositoryPathtooltipIsOpen"
+          ng-mouseenter="repositoryPathtooltipIsOpen = !repositoryPathtooltipIsOpen"
+          uib-tooltip-html="repositoryPathTooltip"
+          tooltip-placement="top"
+          aria-label="Repository Path Tooltip"></span>
     <input type="text" class="form-control" id="path" ng-model="config.path" placeholder="Enter Path (username/reponame)" required>
   </div>
   <div class="form-group">
     <label for="path">Access Token</label>
-    <span class="grey glyphicon glyphicon-info-sign ng-scope" tabindex="0" ng-focus="accessTokenTooltipIsOpen = !accessTokenTooltipIsOpen" tooltip-trigger="outsideClick" tooltip-is-open="accessTokenTooltipIsOpen" ng-mouseenter="accessTokenTooltipIsOpen = true"  uib-tooltip-html="accessTokenTooltip" tooltip-placement="top" aria-label="Access Token Tooltip"></span>
+    <span class="glyphicon glyphicon-info-sign ng-scope"
+          tabindex="0"
+          ng-focus="accessTokenTooltipIsOpen = !accessTokenTooltipIsOpen"
+          tooltip-trigger="outsideClick"
+          tooltip-is-open="accessTokenTooltipIsOpen"
+          ng-mouseenter="accessTokenTooltipIsOpen = !accessTokenTooltipIsOpen"
+          uib-tooltip-html="accessTokenTooltip"
+          tooltip-placement="top"
+          aria-label="Access Token Tooltip"></span>
     <input type="text" class="form-control" id="path" ng-model="config.accessToken" required>
   </div>
 </form>
