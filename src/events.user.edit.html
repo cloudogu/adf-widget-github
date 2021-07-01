@@ -1,17 +1,40 @@
 <form role="form">
   <div class="form-group">
     <label for="path">User Name</label>
-    <span class="grey glyphicon glyphicon-info-sign ng-scope" tabindex="0" ng-focus="userNameTooltipIsOpen = !userNameTooltipIsOpen" tooltip-trigger="outsideClick" tooltip-is-open="userNameTooltipIsOpen" ng-mouseenter="userNameTooltipIsOpen = true" uib-tooltip="Enter the github-user whose git events you want to display." tooltip-placement="top" aria-label="Enter the github-user whose git events you want to display."></span>
+    <span class="glyphicon glyphicon-info-sign ng-scope"
+          tabindex="0"
+          ng-focus="userNameTooltipIsOpen = !userNameTooltipIsOpen"
+          tooltip-trigger="outsideClick"
+          tooltip-is-open="userNameTooltipIsOpen"
+          ng-mouseenter="userNameTooltipIsOpen = !userNameTooltipIsOpen"
+          uib-tooltip="Enter the github-user whose git events you want to display."
+          tooltip-placement="top"
+          aria-label="Enter the github-user whose git events you want to display."></span>
     <input type="text" class="form-control" id="path" ng-model="config.user" placeholder="Enter User (username)" required>
   </div>
   <div class="form-group">
     <label for="path">Organisation</label>
-    <span class="grey glyphicon glyphicon-info-sign ng-scope" tabindex="0" ng-focus="organisationTooltipIsOpen = !organisationTooltipIsOpen" tooltip-trigger="outsideClick" tooltip-is-open="organisationTooltipIsOpen" ng-mouseenter="organisationTooltipIsOpen = true" uib-tooltip="Optional. Enter the github-organisation whose git events you want to display, e.g. cloudogu." tooltip-placement="top" aria-label="Optional. Enter the github-organisation whose git events you want to display, e.g. cloudogu."></span>
+    <span class="glyphicon glyphicon-info-sign ng-scope"
+          tabindex="0"
+          ng-focus="organisationTooltipIsOpen = !organisationTooltipIsOpen"
+          tooltip-trigger="outsideClick" tooltip-is-open="organisationTooltipIsOpen"
+          ng-mouseenter="organisationTooltipIsOpen = !organisationTooltipIsOpen"
+          uib-tooltip="Optional. Enter the github-organisation whose git events you want to display, e.g. cloudogu."
+          tooltip-placement="top"
+          aria-label="Optional. Enter the github-organisation whose git events you want to display, e.g. cloudogu."></span>
     <input type="text" class="form-control" id="path" ng-model="config.org" placeholder="(Optional) Enter Organisation">
   </div>
   <div class="form-group">
     <label for="path">Access Token</label>
-    <span class="grey glyphicon glyphicon-info-sign ng-scope" tabindex="0" ng-focus="accessTokenTooltipIsOpen = !accessTokenTooltipIsOpen" tooltip-trigger="outsideClick" tooltip-is-open="accessTokenTooltipIsOpen" ng-mouseenter="accessTokenTooltipIsOpen = true"  uib-tooltip-html="accessTokenTooltip" tooltip-placement="top" aria-label="Access Token Tooltip"></span>
+    <span class="glyphicon glyphicon-info-sign ng-scope"
+          tabindex="0"
+          ng-focus="accessTokenTooltipIsOpen = !accessTokenTooltipIsOpen"
+          tooltip-trigger="outsideClick"
+          tooltip-is-open="accessTokenTooltipIsOpen"
+          ng-mouseenter="accessTokenTooltipIsOpen = true"
+          uib-tooltip-html="accessTokenTooltip"
+          tooltip-placement="top"
+          aria-label="Access Token Tooltip"></span>
     <input type="text" class="form-control" id="path" ng-model="config.accessToken" required>
   </div>
 </form>
