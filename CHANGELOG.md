@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.8.1] - 2021-07-01
+### Changed
+* removed unnecessary attributes in edit-views
+* replaced npm with yarn
+
 ## [v0.8.0] - 2021-06-22
 ### Added
 * Add tooltips to configuration fields.
